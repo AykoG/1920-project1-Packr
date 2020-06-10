@@ -1,0 +1,11 @@
+[Unit]
+Description=Packr
+After=network.target mariadb.service
+
+[Service]
+Type=simple
+User=root
+ExecStart=/bin/sh /home/pi/project1/launcher.sh
+
+[Install]
+WantedBy=multi-user.target
