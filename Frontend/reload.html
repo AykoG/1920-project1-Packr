@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="Packr is een slimme 2-delige brievenbus met teller en vergrendelsysteem.">
+    <meta name="msapplication-TileColor" content="#71494A">
+    <meta name="theme-color" content="#71494A">
+    <title>Packr</title>
+    <link rel="stylesheet" href="style/screen.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/nxr6nvv.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+    <script src="script/app.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#71494A">
+  </head>
+  <body>
+    <div class="c-page">
+      <header class="o-row o-row--header js-start">
+        <div>
+            <div class="c-header">
+                <div class="c-header__logo">
+                    <h1 class="c-logo">
+                      <a href="/index.html">
+                        <svg class="c-logo_symbol" xmlns="http://www.w3.org/2000/svg" width="148" height="30" viewBox="0 0 148 30">
+                          <defs>
+                            <style>
+                              .cls-1 {
+                                font-size: 25px;
+                                font-family: input-sans;
+                                font-weight: 700;
+                              }
+                        
+                              .cls-2 {
+                                fill-rule: evenodd;
+                              }
+                            </style>
+                          </defs>
+                          <g id="logo-Packr" transform="translate(-0.01 1.999)">
+                            <text id="Packr" class="cls-1" transform="translate(105.01 21.001)"><tspan x="-42.614" y="0">Packr</tspan></text>
+                            <g id="noun_post_box_605162" data-name="noun_post box_605162" transform="translate(-1.99 -9.073)">
+                              <g id="Group_6" data-name="Group 6" transform="translate(2 7.074)">
+                                <g id="Group_5" data-name="Group 5" transform="translate(0 0)">
+                                  <g id="Group_4" data-name="Group 4">
+                                    <g id="Group_3" data-name="Group 3" transform="translate(0 0)">
+                                      <path id="Path_9" data-name="Path 9" class="cls-2" d="M24.539,7.074a6.852,6.852,0,0,0-3.748,1.112,6.945,6.945,0,0,0-.563.456h3.724s.107,0,.588,0a5.285,5.285,0,0,1,5.289,5.292v7.2H19.247V19.618H17.679v1.519h-.992v1.77A1.438,1.438,0,0,0,18.1,24.371h28.48A1.44,1.44,0,0,0,48,22.907v-1.77c0-2.1,0-5.733,0-7.739a6.219,6.219,0,0,0-6.137-6.324H24.539ZM12.109,10.21l.536.276,4.848,2.934,5.215-2.934c.164-.1.548-.276.548-.276H12.109Zm-.7,1.332v5.175a1.321,1.321,0,0,0,1.314,1.332h9.91a1.321,1.321,0,0,0,1.314-1.332V11.573l-.429.273-5.252,3.179a1.6,1.6,0,0,1-1.176,0l-5.252-3.179ZM3.568,13.23V14.8H6.7V13.23Zm4.7,0V14.8H9.84V13.23ZM2,16.365v1.568H3.568V16.365Zm3.136,0v1.568h4.7V16.365Zm28.223,9.524V36.749h1.568V25.889Zm3.136.2v7.527h1.568V26.085Zm-7.84.343v10.32h1.568V26.428Z" transform="translate(-2 -7.074)"/>
+                                    </g>
+                                  </g>
+                                </g>
+                              </g>
+                            </g>
+                          </g>
+                        </svg>
+                      </a>
+                    </h1>
+                </div>
+                <div class="c-header__nav">
+                    <nav class="c-nav">
+                        <ul class="o-list c-nav__list">
+                            <li class="c-nav__item"><a href="/index.html" class="c-nav__link c-nav__link--active">Start</a></li>
+                            <li class="c-nav__item"><a href="/historiek.html" class="c-nav__link">Historiek</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <p class="c-header__cta">
+                    <a href="/beheer.html" class="c-link-cta">
+                        Beheer
+                    </a>
+                </p>
+                <div class="c-header__mobile-nav-trigger">
+                  <div class="o-button-reset c-nav-trigger js-toggle-nav">
+                      <svg class="c-nav-trigger__svg" viewBox="0 -53 384 384" xmlns="http://www.w3.org/2000/svg">
+                        <path d="m368 154.667969h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"/><path d="m368 32h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"/><path d="m368 277.332031h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"/>
+                      </svg>
+                  </div>
+                </div>
+            </div>
+        </div>   
+      </header>
+      <header class="c-title">
+        Packr
+      </header>
+      <section class="o-row o-row--text">
+        <div class="o-container">
+          Packr is momenteel aan het herstarten of is uitgeschakeld.
+        </div>
+      </section>
+    </div>
+    <aside class="c-mobile-nav">
+      <div class="c-mobile-nav__bg"></div>
+      <div class="c-mobile-nav__body">
+          <div class="c-mobile-nav__header">
+              <p class="c-logo">
+                <svg class="c-logo_symbol" xmlns="http://www.w3.org/2000/svg" width="148" height="30" viewBox="0 0 148 30">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        font-size: 25px;
+                        font-family: input-sans;
+                        font-weight: 700;
+                      }
+                
+                      .cls-2 {
+                        fill-rule: evenodd;
+                      }
+                    </style>
+                  </defs>
+                  <g id="logo-Packr" transform="translate(-0.01 1.999)">
+                    <text id="Packr" class="cls-1" transform="translate(105.01 21.001)"><tspan x="-42.614" y="0">Packr</tspan></text>
+                    <g id="noun_post_box_605162" data-name="noun_post box_605162" transform="translate(-1.99 -9.073)">
+                      <g id="Group_6" data-name="Group 6" transform="translate(2 7.074)">
+                        <g id="Group_5" data-name="Group 5" transform="translate(0 0)">
+                          <g id="Group_4" data-name="Group 4">
+                            <g id="Group_3" data-name="Group 3" transform="translate(0 0)">
+                              <path id="Path_9" data-name="Path 9" class="cls-2" d="M24.539,7.074a6.852,6.852,0,0,0-3.748,1.112,6.945,6.945,0,0,0-.563.456h3.724s.107,0,.588,0a5.285,5.285,0,0,1,5.289,5.292v7.2H19.247V19.618H17.679v1.519h-.992v1.77A1.438,1.438,0,0,0,18.1,24.371h28.48A1.44,1.44,0,0,0,48,22.907v-1.77c0-2.1,0-5.733,0-7.739a6.219,6.219,0,0,0-6.137-6.324H24.539ZM12.109,10.21l.536.276,4.848,2.934,5.215-2.934c.164-.1.548-.276.548-.276H12.109Zm-.7,1.332v5.175a1.321,1.321,0,0,0,1.314,1.332h9.91a1.321,1.321,0,0,0,1.314-1.332V11.573l-.429.273-5.252,3.179a1.6,1.6,0,0,1-1.176,0l-5.252-3.179ZM3.568,13.23V14.8H6.7V13.23Zm4.7,0V14.8H9.84V13.23ZM2,16.365v1.568H3.568V16.365Zm3.136,0v1.568h4.7V16.365Zm28.223,9.524V36.749h1.568V25.889Zm3.136.2v7.527h1.568V26.085Zm-7.84.343v10.32h1.568V26.428Z" transform="translate(-2 -7.074)"/>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </p>
+              <div class="o-button-reset c-nav-trigger js-toggle-nav">
+                  <svg class="c-nav-trigger__svg" viewBox="0 0 329.26933 329" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m194.800781 164.769531 128.210938-128.214843c8.34375-8.339844 8.34375-21.824219 0-30.164063-8.339844-8.339844-21.824219-8.339844-30.164063 0l-128.214844 128.214844-128.210937-128.214844c-8.34375-8.339844-21.824219-8.339844-30.164063 0-8.34375 8.339844-8.34375 21.824219 0 30.164063l128.210938 128.214843-128.210938 128.214844c-8.34375 8.339844-8.34375 21.824219 0 30.164063 4.15625 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921875-2.089844 15.082031-6.25l128.210937-128.214844 128.214844 128.214844c4.160156 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921874-2.089844 15.082031-6.25 8.34375-8.339844 8.34375-21.824219 0-30.164063zm0 0"/></svg>
+              </div>
+          </div>
+          <div class="c-mobile-nav__nav c-mobile-nav__nav--main">
+              <nav class="c-nav">
+                  <ul class="o-list c-nav__list">
+                      <li class="c-nav__item"><a href="/index.html" class="c-nav__link">Start</a></li>
+                      <li class="c-nav__item"><a href="/beheer.html" class="c-nav__link">Beheer</a></li>
+                  </ul>
+              </nav>
+          </div>
+      </div>
+    </aside>
+  </body>
+</html>
