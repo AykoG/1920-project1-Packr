@@ -127,14 +127,14 @@ const showMetingenPerId = function(data) {
 }
 
 const getCharts = function() {
-  handleData(`http://10.15.3.115:5000/api/v1/metingen/TEM`, showChart);
-  handleData(`http://10.15.3.115:5000/api/v1/metingen/HUM`, showChart);
-  handleData(`http://10.15.3.115:5000/api/v1/metingen/IR/IR1`, showChart);
-  handleData(`http://10.15.3.115:5000/api/v1/metingen/IR/IR2`, showChart);
+  handleData(`http://${lanIP}/api/v1/metingen/TEM`, showChart);
+  handleData(`http://${lanIP}/api/v1/metingen/HUM`, showChart);
+  handleData(`http://${lanIP}/api/v1/metingen/IR/IR1`, showChart);
+  handleData(`http://${lanIP}/api/v1/metingen/IR/IR2`, showChart);
 };
 
 const getMetingenPerId = function(apparaatid) {
-  handleData(`http://10.15.3.115:5000/api/v1/metingen/${apparaatid}`, showMetingenPerId);
+  handleData(`http://${lanIP}/api/v1/metingen/${apparaatid}`, showMetingenPerId);
 };
 
 const listenToUIStart = function () {
@@ -283,10 +283,10 @@ const listenToSocketBeheer = function () {
 const toggleNav = function() {
   let toggleTrigger = document.querySelectorAll(".js-toggle-nav");
   for (let i = 0; i < toggleTrigger.length; i++) {
-      toggleTrigger[i].addEventListener("click", function() {
-          console.log("ei");
-          document.querySelector("body").classList.toggle("has-mobile-nav");
-      })
+    toggleTrigger[i].addEventListener("click", function() {
+      console.log("ei");
+      document.querySelector("body").classList.toggle("has-mobile-nav");
+    })
   }
 }
 
@@ -302,16 +302,17 @@ document.addEventListener("DOMContentLoaded", function () {
     listenToUIStart();
     listenToSocketStart();
     socket.emit("F2B_read_status");
-    
   }
   if (html_historiek) {
     console.log("Historiek");
+    console.log(lanIP);
     getCharts();
   }
   if (html_beheer) {
     console.log("Beheer");
     listenToUIBeheer();
     listenToSocketBeheer();
+    socket.emit("F2B_read_status");
   }
   if (html_metingen) {
     let urlParams = new URLSearchParams(window.location.search);

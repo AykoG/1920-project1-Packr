@@ -55,9 +55,14 @@ GPIO.setup(IR2_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 def clear_display():
     mijn_lcd.clear_display()
+    mijn_lcd.write_message("Connecting...", "1")
     ips = str(check_output(['hostname', '--all-ip-addresses']))
     ips = ips.replace("b","").replace("'","")
     ips = ips.split(" ")
+    while len(ips[1]) < 5:
+        ips = str(check_output(['hostname', '--all-ip-addresses']))
+        ips = ips.replace("b","").replace("'","")
+        ips = ips.split(" ")
     mijn_lcd.write_message(ips[1], "1")
 
 def IR_callback(channel):
