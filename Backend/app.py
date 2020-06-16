@@ -71,6 +71,17 @@ def IR_callback(channel):
     elif channel == IR2_pin:
         execute_device({'apparaat_id': 'IR2', 'geforceerde_waarde': 0 })
 
+def motor_open():
+    motor1.ChangeDutyCycle(2.5)
+    motor2.ChangeDutyCycle(2.5)
+    return 1
+
+def motor_close():
+    motor1.ChangeDutyCycle(7.5)
+    motor2.ChangeDutyCycle(7.5)
+    return 0
+
+
 GPIO.add_event_detect(IR1_pin, GPIO.FALLING, callback=IR_callback, bouncetime=500)
 GPIO.add_event_detect(IR2_pin, GPIO.FALLING, callback=IR_callback, bouncetime=500)
 
@@ -131,20 +142,14 @@ def execute_device(data):
     elif apparaat_id == "SER":
         if geforceerde_waarde == 0:
             if huidige_status['waarde'] == 0:
-                motor1.ChangeDutyCycle(7.5)
-                motor2.ChangeDutyCycle(7.5)
-                apparaat_waarde = 1
+                apparaat_waarde = motor_open()
             else:
-                motor1.ChangeDutyCycle(2.5)
-                motor2.ChangeDutyCycle(2.5)
+                apparaat_waarde = motor_close()
         else:
             if geforceerde_waarde == 1:
-                motor1.ChangeDutyCycle(7.5)
-                motor2.ChangeDutyCycle(7.5)
-                apparaat_waarde = 1
+                apparaat_waarde = motor_open()
             if geforceerde_waarde == 2:
-                motor1.ChangeDutyCycle(2.5)
-                motor2.ChangeDutyCycle(2.5)
+                apparaat_waarde = motor_close()
     elif apparaat_id == "HUM":
         while apparaat_waarde == 0:
             dht_waarde = instance.read()
